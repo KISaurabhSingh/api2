@@ -97,9 +97,7 @@ def query_api():
 
     prompt = f"Given the following user request: '{user_input}', " \
          f"and metadata of all the tables: '{intents}', " \
-         f"'{prompt}"\
-         f"Write a SQL query that retrieves the requested information and use only functions that are allowed on SQL Server." \
-         f"Return the SQL query directly, with SQL keywords in uppercase and no additional formatting."
+         f"'{prompt}"
     
     sql_query = convert_text_to_sql(user_input, prompt)
     results_as_list = execute_sql_query(sql_query)
