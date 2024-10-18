@@ -95,14 +95,9 @@ def query_api():
         return jsonify({"error": "user_input is required"}), 400
     intents = get_intent_from_search(user_input)
 
-    prompt = f"Given the following user request: '{user_input}', " \
-         f"and metadata of all the tables: '{intents}', " \
-         f"'{prompt}"
+    prompt = user_input+prompt
     
-    sql_query = convert_text_to_sql(user_input, prompt)
-    results_as_list = execute_sql_query(sql_query)
-    print(sql_query)
-    print(results_as_list)
+    sql_query = convert_text_to_sql(prompt)
     if not results_as_list:
         print("No results found for the query.")  # Log if no results found
 
