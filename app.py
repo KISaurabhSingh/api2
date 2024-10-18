@@ -13,7 +13,7 @@ CORS(app)
 
 # app = Flask(__name__)
 # Configure OpenAI API Key once
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 
